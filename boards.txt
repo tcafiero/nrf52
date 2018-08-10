@@ -1,0 +1,215 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+# Copyright (c) 2016 Sandeep Mistry All right reserved.
+# Copyright (c) 2017 Adafruit Industries.  All right reserved.
+# Copyright (c) 2018 IoThingsWare.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.softdevice=Bootloader
+menu.debug=Debug Mode
+##menu.dongle=Programmer Type
+
+#**********************************************
+# TopViewToken nrf52 Board
+#**********************************************
+TopViewToken.name=TopViewToken nRF52
+#TopViewToken.bootloader.tool=opencd
+
+
+# Upload
+TopViewToken.upload.tool=nrfutil
+TopViewToken.upload.protocol=nrfutil
+
+
+
+# Build
+TopViewToken.build.mcu=cortex-m4
+TopViewToken.build.f_cpu=64000000
+#TopViewToken.build.f_cpu=32768
+TopViewToken.build.board=NRF52_FEATHER
+TopViewToken.build.core=nRF5
+TopViewToken.build.variant=TopViewToken
+
+# SofDevice Menu
+# Ram & ROM size varies depending on S132 (check linker script)
+TopViewToken.menu.softdevice.s132v201=0.5.0 dual, S132 2.0.1
+TopViewToken.menu.softdevice.s132v201.build.sd_flags=-DS132 -DSD_VER=201
+TopViewToken.menu.softdevice.s132v201.build.sd_name=s132
+TopViewToken.menu.softdevice.s132v201.build.sd_version=2.0.1
+TopViewToken.menu.softdevice.s132v201.build.sd_fwid=0x0088
+TopViewToken.menu.softdevice.s132v201.build.bootfile=0.5.0/dual/feather52_bootloader_v050_s132_v201
+TopViewToken.menu.softdevice.s132v201.upload.maximum_size=165888
+TopViewToken.menu.softdevice.s132v201.upload.maximum_data_size=51072
+
+TopViewToken.menu.softdevice.s132v510=5.1.0 dual, S132 5.1.0
+TopViewToken.menu.softdevice.s132v510.build.sd_flags=-DS132 -DSD_VER=510
+TopViewToken.menu.softdevice.s132v510.build.sd_name=s132
+TopViewToken.menu.softdevice.s132v510.build.sd_version=5.1.0
+TopViewToken.menu.softdevice.s132v510.build.sd_fwid=0x00A5
+TopViewToken.menu.softdevice.s132v510.build.bootfile={build.sd_version}/dual/feather52_bootloader_5.1.0_s132_dual
+TopViewToken.menu.softdevice.s132v510.upload.maximum_size=151552
+TopViewToken.menu.softdevice.s132v510.upload.maximum_data_size=51072
+
+TopViewToken.menu.softdevice.s132v201noboot=S132 2.0.1 (no boot)
+TopViewToken.menu.softdevice.s132v201noboot.build.sd_flags=-DS132 -DSD_VER=201
+TopViewToken.menu.softdevice.s132v201noboot.build.sd_name=s132
+TopViewToken.menu.softdevice.s132v201noboot.build.sd_version=2.0.1
+TopViewToken.menu.softdevice.s132v201noboot.build.sd_fwid=0x0088
+TopViewToken.menu.softdevice.s132v201noboot.ld.file=armgcc_{build.sd_name}_nrf52832_xxaa.ld
+TopViewToken.menu.softdevice.s132v201noboot.build.bootfile={build.sd_name}_nrf52_{build.sd_version}_softdevice
+TopViewToken.menu.softdevice.s132v201noboot.upload.maximum_size=165888
+TopViewToken.menu.softdevice.s132v201noboot.upload.maximum_data_size=51072
+
+
+
+# Debug Menu
+TopViewToken.menu.debug.l0=Level 0 (Release)
+TopViewToken.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0 -Os
+TopViewToken.menu.debug.l1=Level 1 (Error Message)
+TopViewToken.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1 -Os
+TopViewToken.menu.debug.l2=Level 2 (Full Debug)
+TopViewToken.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2 -Os
+TopViewToken.menu.debug.l3=Level 3 (Segger SystemView)
+TopViewToken.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
+
+
+
+#**********************************************
+# Adafruit Feather nrf52 Board
+#**********************************************
+feather52.name=Adafruit Feather nRF52
+#feather52.bootloader.tool=nrfjprog
+
+# Upload
+feather52.upload.tool=nrfutil
+feather52.upload.protocol=nrfutil
+
+
+
+# Build
+feather52.build.mcu=cortex-m4
+feather52.build.f_cpu=64000000
+#feather52.build.f_cpu=32768
+feather52.build.board=NRF52_FEATHER
+feather52.build.core=nRF5
+feather52.build.variant=feather52
+
+# SofDevice Menu
+# Ram & ROM size varies depending on S132 (check linker script)
+feather52.menu.softdevice.s132v201=0.5.0 dual, S132 2.0.1
+feather52.menu.softdevice.s132v201.build.sd_flags=-DS132 -DSD_VER=201
+feather52.menu.softdevice.s132v201.build.sd_name=s132
+feather52.menu.softdevice.s132v201.build.sd_version=2.0.1
+feather52.menu.softdevice.s132v201.build.sd_fwid=0x0088
+feather52.menu.softdevice.s132v201.build.bootfile=feather52_bootloader_v050_s132_v201
+feather52.menu.softdevice.s132v201.upload.maximum_size=165888
+feather52.menu.softdevice.s132v201.upload.maximum_data_size=51072
+
+feather52.menu.softdevice.s132v510=5.1.0 dual, S132 5.1.0
+feather52.menu.softdevice.s132v510.build.sd_flags=-DS132 -DSD_VER=510
+feather52.menu.softdevice.s132v510.build.sd_name=s132
+feather52.menu.softdevice.s132v510.build.sd_version=5.1.0
+feather52.menu.softdevice.s132v510.build.sd_fwid=0x00A5
+feather52.menu.softdevice.s132v510.build.bootfile=feather52_bootloader_5.1.0_s132_dual
+feather52.menu.softdevice.s132v510.upload.maximum_size=151552
+feather52.menu.softdevice.s132v510.upload.maximum_data_size=51072
+
+feather52.menu.softdevice.s132v201noboot=S132 2.0.1 (no boot)
+feather52.menu.softdevice.s132v201noboot.build.sd_flags=-DS132 -DSD_VER=201
+feather52.menu.softdevice.s132v201noboot.build.sd_name=s132
+feather52.menu.softdevice.s132v201noboot.build.sd_version=2.0.1
+feather52.menu.softdevice.s132v201noboot.build.sd_fwid=0x0088
+feather52.menu.softdevice.s132v201noboot.ld.file=armgcc_{build.sd_name}_nrf52832_xxaa.ld
+feather52.menu.softdevice.s132v201noboot.build.bootfile=s132_nrf52_2.0.1_softdevice
+feather52.menu.softdevice.s132v201noboot.upload.maximum_size=165888
+feather52.menu.softdevice.s132v201noboot.upload.maximum_data_size=51072
+
+
+
+# Debug Menu
+feather52.menu.debug.l0=Level 0 (Release)
+feather52.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0 -g
+feather52.menu.debug.l1=Level 1 (Error Message)
+feather52.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1 -Os
+feather52.menu.debug.l2=Level 2 (Full Debug)
+feather52.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2 -Os
+feather52.menu.debug.l3=Level 3 (Segger SystemView)
+feather52.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
+
+
+#**********************************************
+# Nordic nrf52 DK PCA10040 Board
+#**********************************************
+PCA10040.name=PCA10040
+#PCA10040.bootloader.tool=nrfjprog
+
+# Upload
+PCA10040.upload.tool=nrfutil
+PCA10040.upload.protocol=nrfutil
+
+
+
+# Build
+PCA10040.build.mcu=cortex-m4
+PCA10040.build.f_cpu=64000000
+#PCA10040.build.f_cpu=32768
+PCA10040.build.board=NRF52_FEATHER
+PCA10040.build.core=nRF5
+PCA10040.build.variant=PCA10040
+
+# SofDevice Menu
+# Ram & ROM size varies depending on S132 (check linker script)
+PCA10040.menu.softdevice.s132v201=0.5.0 dual, S132 2.0.1
+PCA10040.menu.softdevice.s132v201.build.sd_flags=-DS132 -DSD_VER=201
+PCA10040.menu.softdevice.s132v201.build.sd_name=s132
+PCA10040.menu.softdevice.s132v201.build.sd_version=2.0.1
+PCA10040.menu.softdevice.s132v201.build.sd_fwid=0x0088
+PCA10040.menu.softdevice.s132v201.build.bootfile=feather52_bootloader_v050_s132_v201
+PCA10040.menu.softdevice.s132v201.upload.maximum_size=165888
+PCA10040.menu.softdevice.s132v201.upload.maximum_data_size=51072
+
+PCA10040.menu.softdevice.s132v510=5.1.0 dual, S132 5.1.0
+PCA10040.menu.softdevice.s132v510.build.sd_flags=-DS132 -DSD_VER=510
+PCA10040.menu.softdevice.s132v510.build.sd_name=s132
+PCA10040.menu.softdevice.s132v510.build.sd_version=5.1.0
+PCA10040.menu.softdevice.s132v510.build.sd_fwid=0x00A5
+PCA10040.menu.softdevice.s132v510.build.bootfile=feather52_bootloader_5.1.0_s132_dual
+PCA10040.menu.softdevice.s132v510.upload.maximum_size=151552
+PCA10040.menu.softdevice.s132v510.upload.maximum_data_size=51072
+
+PCA10040.menu.softdevice.s132v201noboot=S132 2.0.1 (no boot)
+PCA10040.menu.softdevice.s132v201noboot.build.sd_flags=-DS132 -DSD_VER=201
+PCA10040.menu.softdevice.s132v201noboot.build.sd_name=s132
+PCA10040.menu.softdevice.s132v201noboot.build.sd_version=2.0.1
+PCA10040.menu.softdevice.s132v201noboot.build.sd_fwid=0x0088
+PCA10040.menu.softdevice.s132v201noboot.ld.file=armgcc_{build.sd_name}_nrf52832_xxaa.ld
+PCA10040.menu.softdevice.s132v201noboot.build.bootfile=s132_nrf52_2.0.1_softdevice
+PCA10040.menu.softdevice.s132v201noboot.upload.maximum_size=165888
+PCA10040.menu.softdevice.s132v201noboot.upload.maximum_data_size=51072
+
+
+
+# Debug Menu
+PCA10040.menu.debug.l0=Level 0 (Release)
+PCA10040.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0 -Os
+PCA10040.menu.debug.l1=Level 1 (Error Message)
+PCA10040.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1 -Os
+PCA10040.menu.debug.l2=Level 2 (Full Debug)
+PCA10040.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2 -Os
+PCA10040.menu.debug.l3=Level 3 (Segger SystemView)
+PCA10040.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3 -Os
+
+
+
